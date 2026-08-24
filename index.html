@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Portal Geral de Atos do DOU — Administração Pública Federal</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f4f5f7; color: #1a1a1a; }
+    header { background: #1F3864; color: #fff; padding: 22px 28px; }
+    header h1 { margin: 0; font-size: 22px; }
+    header p { margin: 6px 0 0; font-size: 13px; opacity: 0.85; }
+    main { max-width: 1450px; margin: 20px auto; padding: 0 20px; }
+    .card { background: #fff; border: 1px solid #e0e2e7; border-radius: 8px; padding: 20px; margin-bottom: 20px; }
+    
+    .top-orgao { background: #eef2fa; border: 1px solid #c7d2e9; border-radius: 8px; padding: 14px 18px; margin-bottom: 20px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .top-orgao label { font-weight: bold; color: #1F3864; font-size: 14px; }
+    .top-orgao select { flex: 1; max-width: 600px; padding: 9px 12px; font-size: 14px; font-weight: 600; border-radius: 6px; border: 1px solid #1F3864; background: #fff; color: #1F3864; cursor: pointer; }
+    
+    .filtros { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 15px; }
+    .filtros input, .filtros select { padding: 9px 12px; border: 1px solid #c7cad1; border-radius: 6px; font-size: 13px; }
+    .filtros input { flex: 1; min-width: 280px; }
+    
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { background: #1F3864; color: #fff; text-align: left; padding: 11px 10px; font-weight: 600; }
+    td { padding: 10px; border-bottom: 1px solid #eceef1; vertical-align: top; }
+    tr:hover td { background: #fafbfc; }
+    
+    /* Badges de Tipo */
+    .tag { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 700; }
+    .tag-nom { background: #dcefd6; color: #28571d; }
+    .tag-exo { background: #fadcdc; color: #8c1d1d; }
+    .tag-sub { background: #fbf6d0; color: #7a6e00; }
+    .tag-out { background: #f0f1f3; color: #6b6f77; }
+    
+    /* Badges de Órgão */
+    .badge-orgao { display: inline-block; padding: 3px 7px; border-radius: 4px; font-size: 11px; font-weight: bold; background: #eef2fa; color: #1F3864; border: 1px solid #c7d2e9; }
+
+    a.btn-link { display: inline-block; padding: 5px 11px; background: #1F3864; color: #fff; text-decoration: none; border-radius: 4px; font-size: 11px; font-weight: 600; }
+    a.btn-link:hover { background: #2c4d8f; }
+    .stats { display: flex; gap: 10px; margin-bottom: 15px; }
+    .stat-box { background: #f7f8fa; border: 1px solid #e4e6ea; border-radius: 6px; padding: 10px 15px; min-width: 140px; }
+    .stat-box b { display: block; font-size: 20px; color: #1F3864; }
+    .stat-box span { font-size: 11px; color: #61656d; text-transform: uppercase; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Portal Unificado de Atos do Diário Oficial da União</h1>
+  <p>Monitoramento contínuo da Seção 2 (Atos de Pessoal) em toda a Administração Pública Federal</p>
+</header>
+
+<main>
+  <div class="top-orgao">
+    <label for="selOrgao">Selecione o Órgão / Entidade:</label>
+    <select id="selOrgao" onchange="alterarOrgao()">
+      <option value="IPEA" selected>IPEA — Instituto de Pesquisa Econômica Aplicada</option>
+      <option value="TODOS">🌐 TODAS AS ORGANIZAÇÕES (Visão Geral Unificada)</option>
+    </select>
+  </div>
+
+  <div class="card">
+    <div class="stats">
+      <div class="stat-box"><b id="totalAtos">0</b><span>Atos Exibidos</span></div>
+    </div>
+
+    <div class="filtros">
+      <input type="text" id="fBusca" placeholder="Filtrar por nome de servidor, cargo, portaria ou termo..." oninput="filtrarLocal()">
+      <select id="fTipo" onchange="filtrarLocal()">
+        <option value="">Todos os Tipos</option>
+        <option value="Nomeação">Nomeações / Designações</option>
+        <option value="Exoneração">Exonerações / Dispensas</option>
+        <option value="Substituição">Substituições</option>
+        <option value="Outros">Outros</option>
+      </select>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 85px;">Órgão</th>
+          <th style="width: 95px;">Data</th>
+          <th style="width: 115px;">Tipo</th>
+          <th>Ato / Título</th>
+          <th>Resumo do Texto</th>
+          <th style="width: 90px;">Ação</th>
+        </tr>
+      </thead>
+      <tbody id="tbAtos"></tbody>
+    </table>
+  </div>
+</main>
+
+<script>
+let DADOS_BRUTOS = [];
+
+async function inicializar() {
+  await carregarListaOrganizacoes();
+  await carregarDadosAPI();
+}
+
+async function carregarListaOrganizacoes() {
+  try {
+    const res = await fetch('http://127.0.0.1:8000/api/organizacoes');
+    const orgs = await res.json();
+    const select = document.getElementById('selOrgao');
+
+    // Limpa mantendo apenas IPEA (padrão) e TODOS
+    select.innerHTML = `
+      <option value="IPEA" selected>IPEA — Instituto de Pesquisa Econômica Aplicada</option>
+      <option value="TODOS">🌐 TODAS AS ORGANIZAÇÕES (Visão Geral Unificada)</option>
+    `;
+
+    orgs.forEach(o => {
+      if (o.sigla !== 'IPEA') {
+        const opt = document.createElement('option');
+        opt.value = o.sigla;
+        opt.textContent = `${o.sigla} — ${o.nome}`;
+        select.appendChild(opt);
+      }
+    });
+  } catch (err) {
+    console.error("Erro ao carregar lista de organizações:", err);
+  }
+}
+
+async function carregarDadosAPI() {
+  const orgao = document.getElementById('selOrgao').value;
+  const tbody = document.getElementById('tbAtos');
+  tbody.innerHTML = '<tr><td colspan="6">Carregando atos do DOU...</td></tr>';
+
+  try {
+    const res = await fetch(`http://127.0.0.1:8000/api/atos?orgao=${orgao}`);
+    DADOS_BRUTOS = await res.json();
+    filtrarLocal();
+  } catch (err) {
+    console.error("Erro ao conectar na API:", err);
+    tbody.innerHTML = '<tr><td colspan="6">Erro de conexão. Verifique se o servidor Python (server.py) está em execução.</td></tr>';
+  }
+}
+
+function alterarOrgao() {
+  document.getElementById('fBusca').value = '';
+  document.getElementById('fTipo').value = '';
+  carregarDadosAPI();
+}
+
+function filtrarLocal() {
+  const busca = document.getElementById('fBusca').value.toLowerCase();
+  const tipo = document.getElementById('fTipo').value;
+
+  const filtrados = DADOS_BRUTOS.filter(item => {
+    const matchTexto = item.ato.toLowerCase().includes(busca) || item.resumo.toLowerCase().includes(busca);
+    const matchTipo = !tipo || item.tipo === tipo;
+    return matchTexto && matchTipo;
+  });
+
+  renderTabela(filtrados);
+}
+
+function renderTabela(lista) {
+  document.getElementById('totalAtos').innerText = lista.length;
+  const tbody = document.getElementById('tbAtos');
+
+  if (lista.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="6">Nenhum ato encontrado para os filtros selecionados.</td></tr>';
+    return;
+  }
+
+  tbody.innerHTML = lista.map(item => {
+    let tagClass = 'tag-out';
+    if (item.tipo === 'Nomeação') tagClass = 'tag-nom';
+    if (item.tipo === 'Exoneração') tagClass = 'tag-exo';
+    if (item.tipo === 'Substituição') tagClass = 'tag-sub';
+
+    return `
+      <tr>
+        <td><span class="badge-orgao">${item.orgao}</span></td>
+        <td><b>${item.data}</b></td>
+        <td><span class="tag ${tagClass}">${item.tipo}</span></td>
+        <td><b>${item.ato}</b></td>
+        <td>${item.resumo}</td>
+        <td><a class="btn-link" href="${item.link}" target="_blank">Ver no DOU</a></td>
+      </tr>
+    `;
+  }).join('');
+}
+
+inicializar();
+</script>
+
+</body>
+</html>
