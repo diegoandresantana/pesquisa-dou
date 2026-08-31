@@ -1,1 +1,21 @@
-Nothing should be ignored based on the provided file changes. The only added file is `dou_search.py`, which appears to be a Python source code file and should not be ignored.
+```
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+
+# Environment
+.env
+.env.local
+*.env.*
+
+# Editors
+.vscode/
+.idea/
+```
