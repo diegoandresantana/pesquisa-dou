@@ -60,8 +60,13 @@
   </div>
 
   <div class="card">
-    <div class="stats">
-      <div class="stat-box"><b id="totalAtos">0</b><span>Atos Exibidos</span></div>
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+      <div class="stats">
+        <div class="stat-box"><b id="totalAtos">0</b><span>Atos Exibidos</span></div>
+      </div>
+      <button id="btnAtualizar" onclick="atualizarDados()" style="padding: 9px 18px; background: #28a745; color: #fff; border: none; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+        <span>🔄</span> Atualizar Dados
+      </button>
     </div>
 
     <div class="filtros">
@@ -101,7 +106,7 @@ async function inicializar() {
 
 async function carregarListaOrganizacoes() {
   try {
-    const res = await fetch('http://127.0.0.1:8000/api/organizacoes');
+    const res = await fetch('/api/organizacoes');
     const orgs = await res.json();
     const select = document.getElementById('selOrgao');
 
@@ -130,12 +135,38 @@ async function carregarDadosAPI() {
   tbody.innerHTML = '<tr><td colspan="6">Carregando atos do DOU...</td></tr>';
 
   try {
-    const res = await fetch(`http://127.0.0.1:8000/api/atos?orgao=${orgao}`);
+    const res = await fetch(`/api/atos?orgao=${orgao}`);
     DADOS_BRUTOS = await res.json();
     filtrarLocal();
   } catch (err) {
     console.error("Erro ao conectar na API:", err);
     tbody.innerHTML = '<tr><td colspan="6">Erro de conexão. Verifique se o servidor Python (server.py) está em execução.</td></tr>';
+  }
+}
+
+async function atualizarDados() {
+  const btn = document.getElementById('btnAtualizar');
+  const orgao = document.getElementById('selOrgao').value;
+  
+  btn.disabled = true;
+  btn.innerHTML = '<span>⏳</span> Atualizando...';
+  
+  try {
+    const res = await fetch(`/api/coletar?orgao=${orgao}`);
+    const resultado = await res.json();
+    
+    if (resultado.status === 'sucesso') {
+      alert(`✅ ${resultado.mensagem}\nTotal de atos: ${resultado.total_atos}`);
+      await carregarDadosAPI();
+    } else {
+      alert('❌ Erro ao atualizar dados');
+    }
+  } catch (err) {
+    console.error("Erro ao atualizar dados:", err);
+    alert('❌ Erro de conexão ao atualizar dados');
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = '<span>🔄</span> Atualizar Dados';
   }
 }
 
