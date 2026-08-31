@@ -12,8 +12,9 @@ from typing import List, Optional, Dict, Any
 from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, FileResponse
-import requests
-from bs4 import BeautifulSoup
+
+# Importa o módulo de busca no DOU
+from dou_search import buscar_atos_dou, buscar_portarias_nomeacao, buscar_exoneracoes
 
 # Importa o módulo de busca no DOU (Ro-dou API)
 import dou_search
