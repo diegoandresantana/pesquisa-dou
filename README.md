@@ -21,6 +21,7 @@ Aplicação web completa para consulta e monitoramento de atos oficiais publicad
 
 ```bash
 # No Linux/Mac
+chmod +x rodarotina.sh
 ./rodarotina.sh
 
 # No Windows (Git Bash ou WSL)
@@ -35,6 +36,16 @@ pip install -r requirements.txt
 
 # 2. Inicie o servidor
 python server.py
+```
+
+### Opção 3: Docker
+
+```bash
+# Build da imagem
+docker build -t portal-dou .
+
+# Rodar container
+docker run -p 8000:8000 portal-dou
 ```
 
 ### Acessando a Aplicação
@@ -54,8 +65,11 @@ Após iniciar o servidor, acesse:
 3. Conecte seu repositório GitHub
 4. Configure:
    - **Build Command**: `pip install -r requirements.txt`
-   - **Start Command**: `uvicorn server:app --host 0.0.0.0 --port $PORT`
+   - **Start Command**: `python -m uvicorn server:app --host 0.0.0.0 --port $PORT`
+   - **Docker**: Use o Dockerfile incluído (opcional)
 5. Clique em "Create Web Service"
+
+⚠️ **Nota:** No plano gratuito, o serviço "dorme" após 15 minutos de inatividade.
 
 ### Opção 2: Railway.app
 
@@ -87,11 +101,13 @@ Após iniciar o servidor, acesse:
 
 ```
 /workspace
-├── server.py           # Backend FastAPI (servidor principal)
-├── index.html          # Frontend (interface web)
-├── requirements.txt    # Dependências Python
-├── rodarotina.sh       # Script de inicialização
-├── README.md           # Este arquivo
+├── server.py              # Backend FastAPI (servidor principal)
+├── index.html             # Frontend (interface web)
+├── requirements.txt       # Dependências Python
+├── rodarotina.sh          # Script de inicialização
+├── Dockerfile             # Docker para desenvolvimento
+├── Dockerfile.prod        # Docker para produção
+├── README.md              # Este arquivo
 └── dados_dou_orgaos.json  # Banco de dados JSON (gerado automaticamente)
 ```
 
