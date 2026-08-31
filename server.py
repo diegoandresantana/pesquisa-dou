@@ -12,6 +12,7 @@ from typing import List, Optional, Dict, Any
 from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, FileResponse
+from pydantic import BaseModel
 
 # Importa o módulo de busca no DOU
 from dou_search import buscar_atos_dou, buscar_portarias_nomeacao, buscar_exoneracoes
@@ -49,6 +50,64 @@ ORGANIZACOES = [
 ]
 
 ARQUIVO_DADOS = "dados_dou_orgaos.json"
+
+
+# ============================================================================
+# SUB-TAREFA 2.1: ESTRUTURA DE DADOS (SCHEMA)
+# ============================================================================
+
+class AtoDOU(BaseModel):
+    """
+    Schema Pydantic para validar e estruturar os dados de atos do DOU.
+    Define o formato padrão que a API retornará para o frontend.
+    """
+    orgao: str
+    data: str
+    tipo: str
+    ato: str
+    resumo: str
+    link: str
+    nome: str = ""
+    cargo: str = ""
+    fce: str = "-"
+    diretoria: str = ""
+    dtPortaria: str = ""
+    pubDOU: str = ""
+    vigencia: str = "-"
+    
+    class Config:
+        json_schema_extra = {
+            "example": {
+                "orgao": "IPEA",
+                "data": "15/01/2025",
+                "tipo": "Nomeação",
+                "ato": "PORTARIA Nº 101, de 15/01/2025",
+                "resumo": "Nomeia servidor João Silva Santos para Cargo em Comissão FCE-123...",
+                "link": "https://www.in.gov.br/web/dou/-/dou-ipea-20250115",
+                "nome": "João Silva Santos",
+                "cargo": "Cargo em Comissão FCE-123",
+                "fce": "FCE-123",
+                "diretoria": "Diretoria de Planejamento",
+                "dtPortaria": "15/01/2025",
+                "pubDOU": "15/01/2025",
+                "vigencia": "Indeterminada"
+            }
+        }
+
+
+class RespostaColeta(BaseModel):
+    """Schema para resposta dos endpoints de coleta."""
+    status: str
+    mensagem: str
+    total_atos: int
+    detalhes: Optional[Dict[str, int]] = None
+
+
+class RespostaErro(BaseModel):
+    """Schema para respostas de erro."""
+    status: str
+    erro: str
+    mensagem: str
 
 
 def coletar_atos(orgao: str, paginas: int = 3) -> List[Dict[str, Any]]:
