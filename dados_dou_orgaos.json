@@ -2,1221 +2,303 @@
   "IPEA": [
     {
       "orgao": "IPEA",
-      "data": "24/08/2026",
+      "data": "31/08/2026",
       "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 101, de 24/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na IPEA. Processo administrativo nº 2024000.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ipea-20260824"
+      "ato": "PORTARIA Nº 101, de 31/08/2026",
+      "resumo": "Nomeia servidor João Silva Santos para Cargo em Comissão FCE-123 na Diretoria de Planejamento. Processo administrativo nº 2024000. Vigência a partir da publicação.",
+      "link": "https://www.in.gov.br/web/dou/-/dou-ipea-20260831",
+      "nome": "João Silva Santos",
+      "cargo": "Cargo em Comissão FCE-123",
+      "fce": "FCE-100",
+      "diretoria": "Diretoria de Planejamento",
+      "dtPortaria": "31/08/2026",
+      "pubDOU": "31/08/2026",
+      "vigencia": "Indeterminada"
     },
     {
       "orgao": "IPEA",
-      "data": "24/08/2026",
+      "data": "31/08/2026",
       "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 202, de 24/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na IPEA. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ipea-20260824-2"
+      "ato": "PORTARIA Nº 202, de 31/08/2026",
+      "resumo": "Exonera servidor Maria Oliveira Costa do cargo de confiança na Coordenação de Pesquisa. A pedido.",
+      "link": "https://www.in.gov.br/web/dou/-/dou-ipea-20260831-2",
+      "nome": "Maria Oliveira Costa",
+      "cargo": "Função Comissionada FCE-456",
+      "fce": "-",
+      "diretoria": "Coordenação de Pesquisa",
+      "dtPortaria": "31/08/2026",
+      "pubDOU": "31/08/2026",
+      "vigencia": "-"
     },
     {
       "orgao": "IPEA",
-      "data": "24/08/2026",
+      "data": "31/08/2026",
       "tipo": "Substitição",
-      "ato": "PORTARIA Nº 303, de 24/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na IPEA. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ipea-20260824-3"
+      "ato": "PORTARIA Nº 303, de 31/08/2026",
+      "resumo": "Designa servidor Pedro Henrique Souza para substituir titular em exercício na Departamento de Administração. Período determinado de 30 dias. Responder temporariamente como substituto eventual.",
+      "link": "https://www.in.gov.br/web/dou/-/dou-ipea-20260831-3",
+      "nome": "Pedro Henrique Souza",
+      "cargo": "Substituto Eventual",
+      "fce": "FCE-789",
+      "diretoria": "Departamento de Administração",
+      "dtPortaria": "31/08/2026",
+      "pubDOU": "31/08/2026",
+      "vigencia": "30 dias"
     },
     {
       "orgao": "IPEA",
-      "data": "23/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 111, de 23/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na IPEA. Processo administrativo nº 2024001.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ipea-20260823"
+      "data": "31/08/2026",
+      "tipo": "Dispensa",
+      "ato": "PORTARIA Nº 404, de 31/08/2026",
+      "resumo": "Dispensa servidor Ana Paula Ferreira da função de substituição na Divisão de Recursos Humanos. Fim do período de substituição.",
+      "link": "https://www.in.gov.br/web/dou/-/dou-ipea-20260831-4",
+      "nome": "Ana Paula Ferreira",
+      "cargo": "Substituto",
+      "fce": "-",
+      "diretoria": "Divisão de Recursos Humanos",
+      "dtPortaria": "31/08/2026",
+      "pubDOU": "31/08/2026",
+      "vigencia": "-"
     },
     {
       "orgao": "IPEA",
-      "data": "23/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 212, de 23/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na IPEA. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ipea-20260823-2"
+      "data": "30/08/2026",
+      "tipo": "Nomeação",
+      "ato": "PORTARIA Nº 111, de 30/08/2026",
+      "resumo": "Nomeia servidor Maria Oliveira Costa para Função Comissionada FCE-456 na Coordenação de Pesquisa. Processo administrativo nº 2024001. Vigência a partir da publicação.",
+      "link": "https://www.in.gov.br/web/dou/-/dou-ipea-20260830",
+      "nome": "Maria Oliveira Costa",
+      "cargo": "Função Comissionada FCE-456",
+      "fce": "FCE-101",
+      "diretoria": "Coordenação de Pesquisa",
+      "dtPortaria": "30/08/2026",
+      "pubDOU": "30/08/2026",
+      "vigencia": "Indeterminada"
     },
     {
       "orgao": "IPEA",
-      "data": "23/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 313, de 23/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na IPEA. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ipea-20260823-3"
+      "data": "30/08/2026",
+      "tipo": "Exoneração",
+      "ato": "PORTARIA Nº 212, de 30/08/2026",
+      "resumo": "Exonera servidor Pedro Henrique Souza do cargo de confiança na Departamento de Administração. A pedido.",
+      "link": "https://www.in.gov.br/web/dou/-/dou-ipea-20260830-2",
+      "nome": "Pedro Henrique Souza",
+      "cargo": "Diretor de Departamento",
+      "fce": "-",
+      "diretoria": "Departamento de Administração",
+      "dtPortaria": "30/08/2026",
+      "pubDOU": "30/08/2026",
+      "vigencia": "-"
     },
     {
       "orgao": "IPEA",
-      "data": "22/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 121, de 22/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na IPEA. Processo administrativo nº 2024002.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ipea-20260822"
+      "data": "30/08/2026",
+      "tipo": "Substitição",
+      "ato": "PORTARIA Nº 313, de 30/08/2026",
+      "resumo": "Designa servidor Ana Paula Ferreira para substituir titular em exercício na Divisão de Recursos Humanos. Período determinado de 30 dias. Responder temporariamente como substituto eventual.",
+      "link": "https://www.in.gov.br/web/dou/-/dou-ipea-20260830-3",
+      "nome": "Ana Paula Ferreira",
+      "cargo": "Substituto Eventual",
+      "fce": "FCE-789",
+      "diretoria": "Divisão de Recursos Humanos",
+      "dtPortaria": "30/08/2026",
+      "pubDOU": "30/08/2026",
+      "vigencia": "30 dias"
     },
     {
       "orgao": "IPEA",
-      "data": "22/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 222, de 22/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na IPEA. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ipea-20260822-2"
+      "data": "30/08/2026",
+      "tipo": "Dispensa",
+      "ato": "PORTARIA Nº 414, de 30/08/2026",
+      "resumo": "Dispensa servidor Carlos Eduardo Lima da função de substituição na Gerência de Tecnologia. Fim do período de substituição.",
+      "link": "https://www.in.gov.br/web/dou/-/dou-ipea-20260830-4",
+      "nome": "Carlos Eduardo Lima",
+      "cargo": "Substituto",
+      "fce": "-",
+      "diretoria": "Gerência de Tecnologia",
+      "dtPortaria": "30/08/2026",
+      "pubDOU": "30/08/2026",
+      "vigencia": "-"
     },
     {
       "orgao": "IPEA",
-      "data": "22/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 323, de 22/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na IPEA. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ipea-20260822-3"
+      "data": "29/08/2026",
+      "tipo": "Nomeação",
+      "ato": "PORTARIA Nº 121, de 29/08/2026",
+      "resumo": "Nomeia servidor Pedro Henrique Souza para Diretor de Departamento na Departamento de Administração. Processo administrativo nº 2024002. Vigência a partir da publicação.",
+      "link": "https://www.in.gov.br/web/dou/-/dou-ipea-20260829",
+      "nome": "Pedro Henrique Souza",
+      "cargo": "Diretor de Departamento",
+      "fce": "FCE-102",
+      "diretoria": "Departamento de Administração",
+      "dtPortaria": "29/08/2026",
+      "pubDOU": "29/08/2026",
+      "vigencia": "Indeterminada"
     },
     {
       "orgao": "IPEA",
-      "data": "21/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 131, de 21/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na IPEA. Processo administrativo nº 2024003.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ipea-20260821"
+      "data": "29/08/2026",
+      "tipo": "Exoneração",
+      "ato": "PORTARIA Nº 222, de 29/08/2026",
+      "resumo": "Exonera servidor Ana Paula Ferreira do cargo de confiança na Divisão de Recursos Humanos. A pedido.",
+      "link": "https://www.in.gov.br/web/dou/-/dou-ipea-20260829-2",
+      "nome": "Ana Paula Ferreira",
+      "cargo": "Coordenador Geral",
+      "fce": "-",
+      "diretoria": "Divisão de Recursos Humanos",
+      "dtPortaria": "29/08/2026",
+      "pubDOU": "29/08/2026",
+      "vigencia": "-"
     },
     {
       "orgao": "IPEA",
-      "data": "21/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 232, de 21/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na IPEA. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ipea-20260821-2"
+      "data": "29/08/2026",
+      "tipo": "Substitição",
+      "ato": "PORTARIA Nº 323, de 29/08/2026",
+      "resumo": "Designa servidor Carlos Eduardo Lima para substituir titular em exercício na Gerência de Tecnologia. Período determinado de 30 dias. Responder temporariamente como substituto eventual.",
+      "link": "https://www.in.gov.br/web/dou/-/dou-ipea-20260829-3",
+      "nome": "Carlos Eduardo Lima",
+      "cargo": "Substituto Eventual",
+      "fce": "FCE-789",
+      "diretoria": "Gerência de Tecnologia",
+      "dtPortaria": "29/08/2026",
+      "pubDOU": "29/08/2026",
+      "vigencia": "30 dias"
     },
     {
       "orgao": "IPEA",
-      "data": "21/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 333, de 21/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na IPEA. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ipea-20260821-3"
+      "data": "29/08/2026",
+      "tipo": "Dispensa",
+      "ato": "PORTARIA Nº 424, de 29/08/2026",
+      "resumo": "Dispensa servidor Juliana Mendes Rocha da função de substituição na Diretoria de Planejamento. Fim do período de substituição.",
+      "link": "https://www.in.gov.br/web/dou/-/dou-ipea-20260829-4",
+      "nome": "Juliana Mendes Rocha",
+      "cargo": "Substituto",
+      "fce": "-",
+      "diretoria": "Diretoria de Planejamento",
+      "dtPortaria": "29/08/2026",
+      "pubDOU": "29/08/2026",
+      "vigencia": "-"
     },
     {
       "orgao": "IPEA",
-      "data": "20/08/2026",
+      "data": "28/08/2026",
       "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 141, de 20/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na IPEA. Processo administrativo nº 2024004.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ipea-20260820"
+      "ato": "PORTARIA Nº 131, de 28/08/2026",
+      "resumo": "Nomeia servidor Ana Paula Ferreira para Coordenador Geral na Divisão de Recursos Humanos. Processo administrativo nº 2024003. Vigência a partir da publicação.",
+      "link": "https://www.in.gov.br/web/dou/-/dou-ipea-20260828",
+      "nome": "Ana Paula Ferreira",
+      "cargo": "Coordenador Geral",
+      "fce": "FCE-103",
+      "diretoria": "Divisão de Recursos Humanos",
+      "dtPortaria": "28/08/2026",
+      "pubDOU": "28/08/2026",
+      "vigencia": "Indeterminada"
     },
     {
       "orgao": "IPEA",
-      "data": "20/08/2026",
+      "data": "28/08/2026",
       "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 242, de 20/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na IPEA. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ipea-20260820-2"
+      "ato": "PORTARIA Nº 232, de 28/08/2026",
+      "resumo": "Exonera servidor Carlos Eduardo Lima do cargo de confiança na Gerência de Tecnologia. A pedido.",
+      "link": "https://www.in.gov.br/web/dou/-/dou-ipea-20260828-2",
+      "nome": "Carlos Eduardo Lima",
+      "cargo": "Chefe de Divisão",
+      "fce": "-",
+      "diretoria": "Gerência de Tecnologia",
+      "dtPortaria": "28/08/2026",
+      "pubDOU": "28/08/2026",
+      "vigencia": "-"
     },
     {
       "orgao": "IPEA",
-      "data": "20/08/2026",
+      "data": "28/08/2026",
       "tipo": "Substitição",
-      "ato": "PORTARIA Nº 343, de 20/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na IPEA. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ipea-20260820-3"
-    }
-  ],
-  "IFMS": [
+      "ato": "PORTARIA Nº 333, de 28/08/2026",
+      "resumo": "Designa servidor Juliana Mendes Rocha para substituir titular em exercício na Diretoria de Planejamento. Período determinado de 30 dias. Responder temporariamente como substituto eventual.",
+      "link": "https://www.in.gov.br/web/dou/-/dou-ipea-20260828-3",
+      "nome": "Juliana Mendes Rocha",
+      "cargo": "Substituto Eventual",
+      "fce": "FCE-789",
+      "diretoria": "Diretoria de Planejamento",
+      "dtPortaria": "28/08/2026",
+      "pubDOU": "28/08/2026",
+      "vigencia": "30 dias"
+    },
     {
-      "orgao": "IFMS",
-      "data": "24/08/2026",
+      "orgao": "IPEA",
+      "data": "28/08/2026",
+      "tipo": "Dispensa",
+      "ato": "PORTARIA Nº 434, de 28/08/2026",
+      "resumo": "Dispensa servidor Roberto Alves Pereira da função de substituição na Coordenação de Pesquisa. Fim do período de substituição.",
+      "link": "https://www.in.gov.br/web/dou/-/dou-ipea-20260828-4",
+      "nome": "Roberto Alves Pereira",
+      "cargo": "Substituto",
+      "fce": "-",
+      "diretoria": "Coordenação de Pesquisa",
+      "dtPortaria": "28/08/2026",
+      "pubDOU": "28/08/2026",
+      "vigencia": "-"
+    },
+    {
+      "orgao": "IPEA",
+      "data": "27/08/2026",
       "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 101, de 24/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na IFMS. Processo administrativo nº 2024000.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ifms-20260824"
+      "ato": "PORTARIA Nº 141, de 27/08/2026",
+      "resumo": "Nomeia servidor Carlos Eduardo Lima para Chefe de Divisão na Gerência de Tecnologia. Processo administrativo nº 2024004. Vigência a partir da publicação.",
+      "link": "https://www.in.gov.br/web/dou/-/dou-ipea-20260827",
+      "nome": "Carlos Eduardo Lima",
+      "cargo": "Chefe de Divisão",
+      "fce": "FCE-104",
+      "diretoria": "Gerência de Tecnologia",
+      "dtPortaria": "27/08/2026",
+      "pubDOU": "27/08/2026",
+      "vigencia": "Indeterminada"
     },
     {
-      "orgao": "IFMS",
-      "data": "24/08/2026",
+      "orgao": "IPEA",
+      "data": "27/08/2026",
       "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 202, de 24/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na IFMS. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ifms-20260824-2"
+      "ato": "PORTARIA Nº 242, de 27/08/2026",
+      "resumo": "Exonera servidor Juliana Mendes Rocha do cargo de confiança na Diretoria de Planejamento. A pedido.",
+      "link": "https://www.in.gov.br/web/dou/-/dou-ipea-20260827-2",
+      "nome": "Juliana Mendes Rocha",
+      "cargo": "Assessor Técnico",
+      "fce": "-",
+      "diretoria": "Diretoria de Planejamento",
+      "dtPortaria": "27/08/2026",
+      "pubDOU": "27/08/2026",
+      "vigencia": "-"
     },
     {
-      "orgao": "IFMS",
-      "data": "24/08/2026",
+      "orgao": "IPEA",
+      "data": "27/08/2026",
       "tipo": "Substitição",
-      "ato": "PORTARIA Nº 303, de 24/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na IFMS. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ifms-20260824-3"
-    },
-    {
-      "orgao": "IFMS",
-      "data": "23/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 111, de 23/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na IFMS. Processo administrativo nº 2024001.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ifms-20260823"
-    },
-    {
-      "orgao": "IFMS",
-      "data": "23/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 212, de 23/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na IFMS. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ifms-20260823-2"
-    },
-    {
-      "orgao": "IFMS",
-      "data": "23/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 313, de 23/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na IFMS. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ifms-20260823-3"
-    },
-    {
-      "orgao": "IFMS",
-      "data": "22/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 121, de 22/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na IFMS. Processo administrativo nº 2024002.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ifms-20260822"
-    },
-    {
-      "orgao": "IFMS",
-      "data": "22/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 222, de 22/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na IFMS. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ifms-20260822-2"
-    },
-    {
-      "orgao": "IFMS",
-      "data": "22/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 323, de 22/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na IFMS. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ifms-20260822-3"
-    },
-    {
-      "orgao": "IFMS",
-      "data": "21/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 131, de 21/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na IFMS. Processo administrativo nº 2024003.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ifms-20260821"
-    },
-    {
-      "orgao": "IFMS",
-      "data": "21/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 232, de 21/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na IFMS. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ifms-20260821-2"
-    },
-    {
-      "orgao": "IFMS",
-      "data": "21/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 333, de 21/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na IFMS. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ifms-20260821-3"
-    },
-    {
-      "orgao": "IFMS",
-      "data": "20/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 141, de 20/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na IFMS. Processo administrativo nº 2024004.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ifms-20260820"
-    },
-    {
-      "orgao": "IFMS",
-      "data": "20/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 242, de 20/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na IFMS. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ifms-20260820-2"
-    },
-    {
-      "orgao": "IFMS",
-      "data": "20/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 343, de 20/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na IFMS. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ifms-20260820-3"
-    }
-  ],
-  "ANPD": [
-    {
-      "orgao": "ANPD",
-      "data": "24/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 101, de 24/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na ANPD. Processo administrativo nº 2024000.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-anpd-20260824"
-    },
-    {
-      "orgao": "ANPD",
-      "data": "24/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 202, de 24/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na ANPD. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-anpd-20260824-2"
-    },
-    {
-      "orgao": "ANPD",
-      "data": "24/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 303, de 24/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na ANPD. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-anpd-20260824-3"
-    },
-    {
-      "orgao": "ANPD",
-      "data": "23/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 111, de 23/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na ANPD. Processo administrativo nº 2024001.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-anpd-20260823"
-    },
-    {
-      "orgao": "ANPD",
-      "data": "23/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 212, de 23/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na ANPD. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-anpd-20260823-2"
-    },
-    {
-      "orgao": "ANPD",
-      "data": "23/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 313, de 23/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na ANPD. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-anpd-20260823-3"
-    },
-    {
-      "orgao": "ANPD",
-      "data": "22/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 121, de 22/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na ANPD. Processo administrativo nº 2024002.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-anpd-20260822"
-    },
-    {
-      "orgao": "ANPD",
-      "data": "22/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 222, de 22/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na ANPD. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-anpd-20260822-2"
-    },
-    {
-      "orgao": "ANPD",
-      "data": "22/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 323, de 22/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na ANPD. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-anpd-20260822-3"
-    },
-    {
-      "orgao": "ANPD",
-      "data": "21/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 131, de 21/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na ANPD. Processo administrativo nº 2024003.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-anpd-20260821"
-    },
-    {
-      "orgao": "ANPD",
-      "data": "21/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 232, de 21/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na ANPD. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-anpd-20260821-2"
-    },
-    {
-      "orgao": "ANPD",
-      "data": "21/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 333, de 21/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na ANPD. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-anpd-20260821-3"
-    },
-    {
-      "orgao": "ANPD",
-      "data": "20/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 141, de 20/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na ANPD. Processo administrativo nº 2024004.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-anpd-20260820"
-    },
-    {
-      "orgao": "ANPD",
-      "data": "20/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 242, de 20/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na ANPD. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-anpd-20260820-2"
-    },
-    {
-      "orgao": "ANPD",
-      "data": "20/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 343, de 20/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na ANPD. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-anpd-20260820-3"
-    }
-  ],
-  "MEC": [
-    {
-      "orgao": "MEC",
-      "data": "24/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 101, de 24/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na MEC. Processo administrativo nº 2024000.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-mec-20260824"
-    },
-    {
-      "orgao": "MEC",
-      "data": "24/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 202, de 24/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na MEC. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-mec-20260824-2"
-    },
-    {
-      "orgao": "MEC",
-      "data": "24/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 303, de 24/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na MEC. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-mec-20260824-3"
-    },
-    {
-      "orgao": "MEC",
-      "data": "23/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 111, de 23/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na MEC. Processo administrativo nº 2024001.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-mec-20260823"
-    },
-    {
-      "orgao": "MEC",
-      "data": "23/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 212, de 23/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na MEC. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-mec-20260823-2"
-    },
-    {
-      "orgao": "MEC",
-      "data": "23/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 313, de 23/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na MEC. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-mec-20260823-3"
-    },
-    {
-      "orgao": "MEC",
-      "data": "22/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 121, de 22/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na MEC. Processo administrativo nº 2024002.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-mec-20260822"
-    },
-    {
-      "orgao": "MEC",
-      "data": "22/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 222, de 22/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na MEC. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-mec-20260822-2"
-    },
-    {
-      "orgao": "MEC",
-      "data": "22/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 323, de 22/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na MEC. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-mec-20260822-3"
-    },
-    {
-      "orgao": "MEC",
-      "data": "21/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 131, de 21/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na MEC. Processo administrativo nº 2024003.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-mec-20260821"
-    },
-    {
-      "orgao": "MEC",
-      "data": "21/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 232, de 21/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na MEC. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-mec-20260821-2"
-    },
-    {
-      "orgao": "MEC",
-      "data": "21/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 333, de 21/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na MEC. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-mec-20260821-3"
-    },
-    {
-      "orgao": "MEC",
-      "data": "20/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 141, de 20/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na MEC. Processo administrativo nº 2024004.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-mec-20260820"
-    },
-    {
-      "orgao": "MEC",
-      "data": "20/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 242, de 20/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na MEC. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-mec-20260820-2"
-    },
-    {
-      "orgao": "MEC",
-      "data": "20/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 343, de 20/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na MEC. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-mec-20260820-3"
-    }
-  ],
-  "MCTI": [
-    {
-      "orgao": "MCTI",
-      "data": "24/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 101, de 24/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na MCTI. Processo administrativo nº 2024000.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-mcti-20260824"
-    },
-    {
-      "orgao": "MCTI",
-      "data": "24/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 202, de 24/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na MCTI. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-mcti-20260824-2"
-    },
-    {
-      "orgao": "MCTI",
-      "data": "24/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 303, de 24/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na MCTI. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-mcti-20260824-3"
-    },
-    {
-      "orgao": "MCTI",
-      "data": "23/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 111, de 23/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na MCTI. Processo administrativo nº 2024001.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-mcti-20260823"
-    },
-    {
-      "orgao": "MCTI",
-      "data": "23/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 212, de 23/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na MCTI. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-mcti-20260823-2"
-    },
-    {
-      "orgao": "MCTI",
-      "data": "23/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 313, de 23/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na MCTI. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-mcti-20260823-3"
-    },
-    {
-      "orgao": "MCTI",
-      "data": "22/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 121, de 22/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na MCTI. Processo administrativo nº 2024002.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-mcti-20260822"
-    },
-    {
-      "orgao": "MCTI",
-      "data": "22/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 222, de 22/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na MCTI. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-mcti-20260822-2"
-    },
-    {
-      "orgao": "MCTI",
-      "data": "22/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 323, de 22/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na MCTI. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-mcti-20260822-3"
-    },
-    {
-      "orgao": "MCTI",
-      "data": "21/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 131, de 21/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na MCTI. Processo administrativo nº 2024003.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-mcti-20260821"
-    },
-    {
-      "orgao": "MCTI",
-      "data": "21/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 232, de 21/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na MCTI. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-mcti-20260821-2"
-    },
-    {
-      "orgao": "MCTI",
-      "data": "21/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 333, de 21/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na MCTI. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-mcti-20260821-3"
-    },
-    {
-      "orgao": "MCTI",
-      "data": "20/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 141, de 20/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na MCTI. Processo administrativo nº 2024004.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-mcti-20260820"
-    },
-    {
-      "orgao": "MCTI",
-      "data": "20/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 242, de 20/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na MCTI. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-mcti-20260820-2"
-    },
-    {
-      "orgao": "MCTI",
-      "data": "20/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 343, de 20/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na MCTI. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-mcti-20260820-3"
-    }
-  ],
-  "IBGE": [
-    {
-      "orgao": "IBGE",
-      "data": "24/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 101, de 24/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na IBGE. Processo administrativo nº 2024000.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ibge-20260824"
-    },
-    {
-      "orgao": "IBGE",
-      "data": "24/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 202, de 24/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na IBGE. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ibge-20260824-2"
-    },
-    {
-      "orgao": "IBGE",
-      "data": "24/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 303, de 24/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na IBGE. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ibge-20260824-3"
-    },
-    {
-      "orgao": "IBGE",
-      "data": "23/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 111, de 23/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na IBGE. Processo administrativo nº 2024001.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ibge-20260823"
-    },
-    {
-      "orgao": "IBGE",
-      "data": "23/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 212, de 23/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na IBGE. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ibge-20260823-2"
-    },
-    {
-      "orgao": "IBGE",
-      "data": "23/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 313, de 23/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na IBGE. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ibge-20260823-3"
-    },
-    {
-      "orgao": "IBGE",
-      "data": "22/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 121, de 22/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na IBGE. Processo administrativo nº 2024002.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ibge-20260822"
-    },
-    {
-      "orgao": "IBGE",
-      "data": "22/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 222, de 22/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na IBGE. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ibge-20260822-2"
-    },
-    {
-      "orgao": "IBGE",
-      "data": "22/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 323, de 22/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na IBGE. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ibge-20260822-3"
-    },
-    {
-      "orgao": "IBGE",
-      "data": "21/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 131, de 21/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na IBGE. Processo administrativo nº 2024003.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ibge-20260821"
-    },
-    {
-      "orgao": "IBGE",
-      "data": "21/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 232, de 21/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na IBGE. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ibge-20260821-2"
-    },
-    {
-      "orgao": "IBGE",
-      "data": "21/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 333, de 21/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na IBGE. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ibge-20260821-3"
-    },
-    {
-      "orgao": "IBGE",
-      "data": "20/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 141, de 20/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na IBGE. Processo administrativo nº 2024004.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ibge-20260820"
-    },
-    {
-      "orgao": "IBGE",
-      "data": "20/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 242, de 20/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na IBGE. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ibge-20260820-2"
-    },
-    {
-      "orgao": "IBGE",
-      "data": "20/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 343, de 20/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na IBGE. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-ibge-20260820-3"
-    }
-  ],
-  "INPE": [
-    {
-      "orgao": "INPE",
-      "data": "24/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 101, de 24/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na INPE. Processo administrativo nº 2024000.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-inpe-20260824"
-    },
-    {
-      "orgao": "INPE",
-      "data": "24/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 202, de 24/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na INPE. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-inpe-20260824-2"
-    },
-    {
-      "orgao": "INPE",
-      "data": "24/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 303, de 24/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na INPE. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-inpe-20260824-3"
-    },
-    {
-      "orgao": "INPE",
-      "data": "23/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 111, de 23/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na INPE. Processo administrativo nº 2024001.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-inpe-20260823"
-    },
-    {
-      "orgao": "INPE",
-      "data": "23/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 212, de 23/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na INPE. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-inpe-20260823-2"
-    },
-    {
-      "orgao": "INPE",
-      "data": "23/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 313, de 23/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na INPE. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-inpe-20260823-3"
-    },
-    {
-      "orgao": "INPE",
-      "data": "22/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 121, de 22/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na INPE. Processo administrativo nº 2024002.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-inpe-20260822"
-    },
-    {
-      "orgao": "INPE",
-      "data": "22/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 222, de 22/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na INPE. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-inpe-20260822-2"
-    },
-    {
-      "orgao": "INPE",
-      "data": "22/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 323, de 22/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na INPE. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-inpe-20260822-3"
-    },
-    {
-      "orgao": "INPE",
-      "data": "21/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 131, de 21/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na INPE. Processo administrativo nº 2024003.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-inpe-20260821"
-    },
-    {
-      "orgao": "INPE",
-      "data": "21/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 232, de 21/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na INPE. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-inpe-20260821-2"
-    },
-    {
-      "orgao": "INPE",
-      "data": "21/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 333, de 21/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na INPE. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-inpe-20260821-3"
-    },
-    {
-      "orgao": "INPE",
-      "data": "20/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 141, de 20/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na INPE. Processo administrativo nº 2024004.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-inpe-20260820"
-    },
-    {
-      "orgao": "INPE",
-      "data": "20/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 242, de 20/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na INPE. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-inpe-20260820-2"
-    },
-    {
-      "orgao": "INPE",
-      "data": "20/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 343, de 20/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na INPE. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-inpe-20260820-3"
-    }
-  ],
-  "CAPES": [
-    {
-      "orgao": "CAPES",
-      "data": "24/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 101, de 24/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na CAPES. Processo administrativo nº 2024000.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-capes-20260824"
-    },
-    {
-      "orgao": "CAPES",
-      "data": "24/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 202, de 24/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na CAPES. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-capes-20260824-2"
-    },
-    {
-      "orgao": "CAPES",
-      "data": "24/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 303, de 24/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na CAPES. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-capes-20260824-3"
-    },
-    {
-      "orgao": "CAPES",
-      "data": "23/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 111, de 23/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na CAPES. Processo administrativo nº 2024001.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-capes-20260823"
-    },
-    {
-      "orgao": "CAPES",
-      "data": "23/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 212, de 23/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na CAPES. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-capes-20260823-2"
-    },
-    {
-      "orgao": "CAPES",
-      "data": "23/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 313, de 23/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na CAPES. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-capes-20260823-3"
-    },
-    {
-      "orgao": "CAPES",
-      "data": "22/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 121, de 22/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na CAPES. Processo administrativo nº 2024002.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-capes-20260822"
-    },
-    {
-      "orgao": "CAPES",
-      "data": "22/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 222, de 22/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na CAPES. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-capes-20260822-2"
-    },
-    {
-      "orgao": "CAPES",
-      "data": "22/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 323, de 22/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na CAPES. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-capes-20260822-3"
-    },
-    {
-      "orgao": "CAPES",
-      "data": "21/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 131, de 21/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na CAPES. Processo administrativo nº 2024003.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-capes-20260821"
-    },
-    {
-      "orgao": "CAPES",
-      "data": "21/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 232, de 21/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na CAPES. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-capes-20260821-2"
-    },
-    {
-      "orgao": "CAPES",
-      "data": "21/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 333, de 21/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na CAPES. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-capes-20260821-3"
-    },
-    {
-      "orgao": "CAPES",
-      "data": "20/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 141, de 20/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na CAPES. Processo administrativo nº 2024004.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-capes-20260820"
-    },
-    {
-      "orgao": "CAPES",
-      "data": "20/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 242, de 20/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na CAPES. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-capes-20260820-2"
-    },
-    {
-      "orgao": "CAPES",
-      "data": "20/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 343, de 20/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na CAPES. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-capes-20260820-3"
-    }
-  ],
-  "CNPQ": [
-    {
-      "orgao": "CNPQ",
-      "data": "24/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 101, de 24/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na CNPQ. Processo administrativo nº 2024000.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-cnpq-20260824"
-    },
-    {
-      "orgao": "CNPQ",
-      "data": "24/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 202, de 24/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na CNPQ. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-cnpq-20260824-2"
-    },
-    {
-      "orgao": "CNPQ",
-      "data": "24/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 303, de 24/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na CNPQ. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-cnpq-20260824-3"
-    },
-    {
-      "orgao": "CNPQ",
-      "data": "23/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 111, de 23/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na CNPQ. Processo administrativo nº 2024001.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-cnpq-20260823"
-    },
-    {
-      "orgao": "CNPQ",
-      "data": "23/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 212, de 23/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na CNPQ. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-cnpq-20260823-2"
-    },
-    {
-      "orgao": "CNPQ",
-      "data": "23/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 313, de 23/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na CNPQ. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-cnpq-20260823-3"
-    },
-    {
-      "orgao": "CNPQ",
-      "data": "22/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 121, de 22/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na CNPQ. Processo administrativo nº 2024002.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-cnpq-20260822"
-    },
-    {
-      "orgao": "CNPQ",
-      "data": "22/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 222, de 22/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na CNPQ. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-cnpq-20260822-2"
-    },
-    {
-      "orgao": "CNPQ",
-      "data": "22/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 323, de 22/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na CNPQ. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-cnpq-20260822-3"
-    },
-    {
-      "orgao": "CNPQ",
-      "data": "21/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 131, de 21/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na CNPQ. Processo administrativo nº 2024003.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-cnpq-20260821"
-    },
-    {
-      "orgao": "CNPQ",
-      "data": "21/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 232, de 21/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na CNPQ. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-cnpq-20260821-2"
-    },
-    {
-      "orgao": "CNPQ",
-      "data": "21/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 333, de 21/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na CNPQ. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-cnpq-20260821-3"
-    },
-    {
-      "orgao": "CNPQ",
-      "data": "20/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 141, de 20/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na CNPQ. Processo administrativo nº 2024004.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-cnpq-20260820"
-    },
-    {
-      "orgao": "CNPQ",
-      "data": "20/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 242, de 20/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na CNPQ. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-cnpq-20260820-2"
-    },
-    {
-      "orgao": "CNPQ",
-      "data": "20/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 343, de 20/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na CNPQ. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-cnpq-20260820-3"
-    }
-  ],
-  "FINEP": [
-    {
-      "orgao": "FINEP",
-      "data": "24/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 101, de 24/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na FINEP. Processo administrativo nº 2024000.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-finep-20260824"
-    },
-    {
-      "orgao": "FINEP",
-      "data": "24/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 202, de 24/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na FINEP. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-finep-20260824-2"
-    },
-    {
-      "orgao": "FINEP",
-      "data": "24/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 303, de 24/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na FINEP. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-finep-20260824-3"
-    },
-    {
-      "orgao": "FINEP",
-      "data": "23/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 111, de 23/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na FINEP. Processo administrativo nº 2024001.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-finep-20260823"
-    },
-    {
-      "orgao": "FINEP",
-      "data": "23/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 212, de 23/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na FINEP. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-finep-20260823-2"
-    },
-    {
-      "orgao": "FINEP",
-      "data": "23/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 313, de 23/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na FINEP. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-finep-20260823-3"
-    },
-    {
-      "orgao": "FINEP",
-      "data": "22/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 121, de 22/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na FINEP. Processo administrativo nº 2024002.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-finep-20260822"
-    },
-    {
-      "orgao": "FINEP",
-      "data": "22/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 222, de 22/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na FINEP. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-finep-20260822-2"
-    },
-    {
-      "orgao": "FINEP",
-      "data": "22/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 323, de 22/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na FINEP. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-finep-20260822-3"
-    },
-    {
-      "orgao": "FINEP",
-      "data": "21/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 131, de 21/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na FINEP. Processo administrativo nº 2024003.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-finep-20260821"
-    },
-    {
-      "orgao": "FINEP",
-      "data": "21/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 232, de 21/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na FINEP. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-finep-20260821-2"
-    },
-    {
-      "orgao": "FINEP",
-      "data": "21/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 333, de 21/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na FINEP. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-finep-20260821-3"
-    },
-    {
-      "orgao": "FINEP",
-      "data": "20/08/2026",
-      "tipo": "Nomeação",
-      "ato": "PORTARIA Nº 141, de 20/08/2026",
-      "resumo": "Nomeia servidor para cargo em comissão na FINEP. Processo administrativo nº 2024004.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-finep-20260820"
-    },
-    {
-      "orgao": "FINEP",
-      "data": "20/08/2026",
-      "tipo": "Exoneração",
-      "ato": "PORTARIA Nº 242, de 20/08/2026",
-      "resumo": "Exonera servidor do cargo de confiança na FINEP. A pedido.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-finep-20260820-2"
-    },
-    {
-      "orgao": "FINEP",
-      "data": "20/08/2026",
-      "tipo": "Substitição",
-      "ato": "PORTARIA Nº 343, de 20/08/2026",
-      "resumo": "Designa servidor para substituir titular em exercício na FINEP. Período determinado.",
-      "link": "https://www.in.gov.br/web/dou/-/dou-finep-20260820-3"
+      "ato": "PORTARIA Nº 343, de 27/08/2026",
+      "resumo": "Designa servidor Roberto Alves Pereira para substituir titular em exercício na Coordenação de Pesquisa. Período determinado de 30 dias. Responder temporariamente como substituto eventual.",
+      "link": "https://www.in.gov.br/web/dou/-/dou-ipea-20260827-3",
+      "nome": "Roberto Alves Pereira",
+      "cargo": "Substituto Eventual",
+      "fce": "FCE-789",
+      "diretoria": "Coordenação de Pesquisa",
+      "dtPortaria": "27/08/2026",
+      "pubDOU": "27/08/2026",
+      "vigencia": "30 dias"
+    },
+    {
+      "orgao": "IPEA",
+      "data": "27/08/2026",
+      "tipo": "Dispensa",
+      "ato": "PORTARIA Nº 444, de 27/08/2026",
+      "resumo": "Dispensa servidor Fernanda Carvalho Gomes da função de substituição na Departamento de Administração. Fim do período de substituição.",
+      "link": "https://www.in.gov.br/web/dou/-/dou-ipea-20260827-4",
+      "nome": "Fernanda Carvalho Gomes",
+      "cargo": "Substituto",
+      "fce": "-",
+      "diretoria": "Departamento de Administração",
+      "dtPortaria": "27/08/2026",
+      "pubDOU": "27/08/2026",
+      "vigencia": "-"
     }
   ]
 }

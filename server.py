@@ -74,37 +74,93 @@ def coletar_atos(orgao: str, paginas: int = 3) -> List[Dict[str, Any]]:
         "OUTROS": "Outros"
     }
     
+    # Nomes fictícios para simulação
+    nomes_servidores = [
+        "João Silva Santos", "Maria Oliveira Costa", "Pedro Henrique Souza", 
+        "Ana Paula Ferreira", "Carlos Eduardo Lima", "Juliana Mendes Rocha",
+        "Roberto Alves Pereira", "Fernanda Carvalho Gomes", "Lucas Martins Barbosa",
+        "Patricia Ribeiro Dias"
+    ]
+    
+    cargos = [
+        "Cargo em Comissão FCE-123", "Função Comissionada FCE-456", 
+        "Diretor de Departamento", "Coordenador Geral", "Chefe de Divisão",
+        "Assessor Técnico", "Analista Administrativo"
+    ]
+    
+    diretorias = [
+        "Diretoria de Planejamento", "Coordenação de Pesquisa", 
+        "Departamento de Administração", "Divisão de Recursos Humanos",
+        "Gerência de Tecnologia"
+    ]
+    
     # Gerar dados simulados para demonstração
     # Em produção, isso seria substituído por scraping real do site do DOU
     for i in range(paginas):
         data_base = datetime.now() - timedelta(days=i)
         data_str = data_base.strftime("%d/%m/%Y")
         
-        # Simular alguns atos para cada órgão
+        # Simular alguns atos para cada órgão com dados estruturados
         atos_simulados = [
             {
                 "orgao": orgao,
                 "data": data_str,
                 "tipo": "Nomeação",
                 "ato": f"PORTARIA Nº {100 + i * 10 + 1}, de {data_str}",
-                "resumo": f"Nomeia servidor para cargo em comissão na {orgao}. Processo administrativo nº {2024000 + i}.",
-                "link": f"https://www.in.gov.br/web/dou/-/dou-{orgao.lower()}-{data_base.strftime('%Y%m%d')}"
+                "resumo": f"Nomeia servidor {nomes_servidores[i % len(nomes_servidores)]} para {cargos[i % len(cargos)]} na {diretorias[i % len(diretorias)]}. Processo administrativo nº {2024000 + i}. Vigência a partir da publicação.",
+                "link": f"https://www.in.gov.br/web/dou/-/dou-{orgao.lower()}-{data_base.strftime('%Y%m%d')}",
+                "nome": nomes_servidores[i % len(nomes_servidores)],
+                "cargo": cargos[i % len(cargos)],
+                "fce": f"FCE-{100+i}",
+                "diretoria": diretorias[i % len(diretorias)],
+                "dtPortaria": data_str,
+                "pubDOU": data_str,
+                "vigencia": "Indeterminada"
             },
             {
                 "orgao": orgao,
                 "data": data_str,
                 "tipo": "Exoneração",
                 "ato": f"PORTARIA Nº {200 + i * 10 + 2}, de {data_str}",
-                "resumo": f"Exonera servidor do cargo de confiança na {orgao}. A pedido.",
-                "link": f"https://www.in.gov.br/web/dou/-/dou-{orgao.lower()}-{data_base.strftime('%Y%m%d')}-2"
+                "resumo": f"Exonera servidor {nomes_servidores[(i+1) % len(nomes_servidores)]} do cargo de confiança na {diretorias[(i+1) % len(diretorias)]}. A pedido.",
+                "link": f"https://www.in.gov.br/web/dou/-/dou-{orgao.lower()}-{data_base.strftime('%Y%m%d')}-2",
+                "nome": nomes_servidores[(i+1) % len(nomes_servidores)],
+                "cargo": cargos[(i+1) % len(cargos)],
+                "fce": "-",
+                "diretoria": diretorias[(i+1) % len(diretorias)],
+                "dtPortaria": data_str,
+                "pubDOU": data_str,
+                "vigencia": "-"
             },
             {
                 "orgao": orgao,
                 "data": data_str,
                 "tipo": "Substitição",
                 "ato": f"PORTARIA Nº {300 + i * 10 + 3}, de {data_str}",
-                "resumo": f"Designa servidor para substituir titular em exercício na {orgao}. Período determinado.",
-                "link": f"https://www.in.gov.br/web/dou/-/dou-{orgao.lower()}-{data_base.strftime('%Y%m%d')}-3"
+                "resumo": f"Designa servidor {nomes_servidores[(i+2) % len(nomes_servidores)]} para substituir titular em exercício na {diretorias[(i+2) % len(diretorias)]}. Período determinado de 30 dias. Responder temporariamente como substituto eventual.",
+                "link": f"https://www.in.gov.br/web/dou/-/dou-{orgao.lower()}-{data_base.strftime('%Y%m%d')}-3",
+                "nome": nomes_servidores[(i+2) % len(nomes_servidores)],
+                "cargo": "Substituto Eventual",
+                "fce": "FCE-789",
+                "diretoria": diretorias[(i+2) % len(diretorias)],
+                "dtPortaria": data_str,
+                "pubDOU": data_str,
+                "vigencia": "30 dias"
+            },
+            {
+                "orgao": orgao,
+                "data": data_str,
+                "tipo": "Dispensa",
+                "ato": f"PORTARIA Nº {400 + i * 10 + 4}, de {data_str}",
+                "resumo": f"Dispensa servidor {nomes_servidores[(i+3) % len(nomes_servidores)]} da função de substituição na {diretorias[(i+3) % len(diretorias)]}. Fim do período de substituição.",
+                "link": f"https://www.in.gov.br/web/dou/-/dou-{orgao.lower()}-{data_base.strftime('%Y%m%d')}-4",
+                "nome": nomes_servidores[(i+3) % len(nomes_servidores)],
+                "cargo": "Substituto",
+                "fce": "-",
+                "diretoria": diretorias[(i+3) % len(diretorias)],
+                "dtPortaria": data_str,
+                "pubDOU": data_str,
+                "vigencia": "-"
             }
         ]
         
