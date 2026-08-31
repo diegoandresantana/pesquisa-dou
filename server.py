@@ -15,6 +15,9 @@ from fastapi.responses import HTMLResponse, FileResponse
 import requests
 from bs4 import BeautifulSoup
 
+# Importa o módulo de busca no DOU (Ro-dou API)
+import dou_search
+
 app = FastAPI(
     title="Portal de Atos DOU",
     description="API para consulta de atos oficiais do Diário Oficial da União - Seção 2",
