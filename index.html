@@ -37,10 +37,18 @@
 
     a.btn-link { display: inline-block; padding: 5px 11px; background: #1F3864; color: #fff; text-decoration: none; border-radius: 4px; font-size: 11px; font-weight: 600; }
     a.btn-link:hover { background: #2c4d8f; }
-    .stats { display: flex; gap: 10px; margin-bottom: 15px; }
-    .stat-box { background: #f7f8fa; border: 1px solid #e4e6ea; border-radius: 6px; padding: 10px 15px; min-width: 140px; }
+    .stats { display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap; }
+    .stat-box { background: #f7f8fa; border: 1px solid #e4e6ea; border-radius: 6px; padding: 10px 15px; min-width: 120px; }
     .stat-box b { display: block; font-size: 20px; color: #1F3864; }
     .stat-box span { font-size: 11px; color: #61656d; text-transform: uppercase; }
+    
+    /* Resumo Detalhado */
+    .resumo-detalhado { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; border-radius: 8px; padding: 18px 20px; margin-bottom: 20px; }
+    .resumo-detalhado h3 { margin: 0 0 12px 0; font-size: 16px; font-weight: 600; }
+    .grid-resumo { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; }
+    .item-resumo { background: rgba(255,255,255,0.15); border-radius: 6px; padding: 10px 12px; text-align: center; }
+    .item-resumo b { display: block; font-size: 24px; font-weight: 700; }
+    .item-resumo span { font-size: 10px; text-transform: uppercase; opacity: 0.9; display: block; margin-top: 4px; }
   </style>
 </head>
 <body>
@@ -60,6 +68,20 @@
   </div>
 
   <div class="card">
+    <!-- Resumo Detalhado -->
+    <div class="resumo-detalhado" id="resumoDetalhado" style="display: none;">
+      <h3>📊 Resumo dos Atos Encontrados</h3>
+      <div class="grid-resumo">
+        <div class="item-resumo"><b id="totalMovimentacoes">0</b><span>Movimentações</span></div>
+        <div class="item-resumo"><b id="totalFCE">0</b><span>Atos FCE</span></div>
+        <div class="item-resumo"><b id="totalNomeacoes">0</b><span>Nomeações</span></div>
+        <div class="item-resumo"><b id="totalExoneracoes">0</b><span>Exonerações</span></div>
+        <div class="item-resumo"><b id="totalSubstituto">0</b><span>Substituto eventual</span></div>
+        <div class="item-resumo"><b id="totalDispensa">0</b><span>Dispensa substit.</span></div>
+        <div class="item-resumo"><b id="totalResponder">0</b><span>Responder (temp.)</span></div>
+      </div>
+    </div>
+
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
       <div class="stats">
         <div class="stat-box"><b id="totalAtos">0</b><span>Atos Exibidos</span></div>
@@ -82,13 +104,18 @@
 
     <table>
       <thead>
-        <tr>
-          <th style="width: 85px;">Órgão</th>
-          <th style="width: 95px;">Data</th>
-          <th style="width: 115px;">Tipo</th>
-          <th>Ato / Título</th>
-          <th>Resumo do Texto</th>
-          <th style="width: 90px;">Ação</th>
+        <tr id="thr">
+          <th data-col="name" data-idx="0" style="width:170px" draggable="true" class="">Nome</th>
+          <th data-col="cargo" data-idx="1" style="width:140px" draggable="true" class="">Cargo</th>
+          <th data-col="sigla" data-idx="2" style="width:56px" draggable="true" class="">Sigla</th>
+          <th data-col="fce" data-idx="3" style="width:58px" draggable="true" class="">FCE</th>
+          <th data-col="type" data-idx="4" style="width:150px" draggable="true" class="">Tipo de ato</th>
+          <th data-col="diretoria" data-idx="5" style="width:100px" draggable="true" class="">Diretoria</th>
+          <th data-col="ato" data-idx="6" style="width:150px" draggable="true" class="">Portaria</th>
+          <th data-col="dtPortaria" data-idx="7" style="width:80px" draggable="true" class="">Dt. portaria</th>
+          <th data-col="pubDOU" data-idx="8" style="width:70px" draggable="true" class="">Pub. DOU</th>
+          <th data-col="vigencia" data-idx="9" style="width:110px" draggable="true" class="">Vigência</th>
+          <th data-col="link" data-idx="10" style="width:70px" draggable="true" class="">Ação</th>
         </tr>
       </thead>
       <tbody id="tbAtos"></tbody>
@@ -181,12 +208,79 @@ function filtrarLocal() {
   const tipo = document.getElementById('fTipo').value;
 
   const filtrados = DADOS_BRUTOS.filter(item => {
-    const matchTexto = item.ato.toLowerCase().includes(busca) || item.resumo.toLowerCase().includes(busca);
+    const matchTexto = item.ato.toLowerCase().includes(busca) || item.resumo.toLowerCase().includes(busca) || (item.nome && item.nome.toLowerCase().includes(busca));
     const matchTipo = !tipo || item.tipo === tipo;
     return matchTexto && matchTipo;
   });
 
+  atualizarResumo(filtrados);
   renderTabela(filtrados);
+}
+
+function atualizarResumo(lista) {
+  // Mostrar resumo apenas se houver dados
+  const resumoDiv = document.getElementById('resumoDetalhado');
+  if (lista.length === 0) {
+    resumoDiv.style.display = 'none';
+    return;
+  }
+  resumoDiv.style.display = 'block';
+
+  // Calcular estatísticas
+  const total = lista.length;
+  
+  // Contar por tipo de ato
+  let nomeacoes = 0, exoneracoes = 0, substituicoes = 0, dispensas = 0;
+  let atosFCE = 0, responderTemp = 0, substitutoEventual = 0;
+  
+  lista.forEach(item => {
+    const tipoLower = (item.tipo || '').toLowerCase();
+    const resumoLower = (item.resumo || '').toLowerCase();
+    const atoLower = (item.ato || '').toLowerCase();
+    
+    // Nomeações
+    if (tipoLower.includes('nomeação') || tipoLower.includes('designação')) {
+      nomeacoes++;
+    }
+    
+    // Exonerações
+    if (tipoLower.includes('exoneração') || tipoLower.includes('dispensa')) {
+      exoneracoes++;
+    }
+    
+    // Substituições
+    if (tipoLower.includes('substituição')) {
+      substituicoes++;
+      // Verificar se é "substituto eventual"
+      if (resumoLower.includes('eventual') || atoLower.includes('eventual')) {
+        substitutoEventual++;
+      }
+    }
+    
+    // Dispensas de substituição
+    if (tipoLower.includes('dispensa') && (resumoLower.includes('substituiç') || resumoLower.includes('substitu'))) {
+      dispensas++;
+    }
+    
+    // Atos FCE (Função Comissionada ou Cargo em Confiança)
+    if (resumoLower.includes('fce') || resumoLower.includes('função comissionada') || resumoLower.includes('cargo em confiança') || tipoLower.includes('fce')) {
+      atosFCE++;
+    }
+    
+    // Responder temporariamente
+    if (resumoLower.includes('responder') || resumoLower.includes('temporariamente') || resumoLower.includes('interinamente') || atoLower.includes('responder')) {
+      responderTemp++;
+    }
+  });
+
+  // Atualizar display
+  document.getElementById('totalMovimentacoes').textContent = total;
+  document.getElementById('totalFCE').textContent = atosFCE;
+  document.getElementById('totalNomeacoes').textContent = nomeacoes;
+  document.getElementById('totalExoneracoes').textContent = exoneracoes;
+  document.getElementById('totalSubstituto').textContent = substitutoEventual;
+  document.getElementById('totalDispensa').textContent = dispensas;
+  document.getElementById('totalResponder').textContent = responderTemp;
 }
 
 function renderTabela(lista) {
@@ -194,7 +288,7 @@ function renderTabela(lista) {
   const tbody = document.getElementById('tbAtos');
 
   if (lista.length === 0) {
-    tbody.innerHTML = '<tr><td colspan="6">Nenhum ato encontrado para os filtros selecionados.</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="11">Nenhum ato encontrado para os filtros selecionados.</td></tr>';
     return;
   }
 
@@ -204,17 +298,93 @@ function renderTabela(lista) {
     if (item.tipo === 'Exoneração') tagClass = 'tag-exo';
     if (item.tipo === 'Substituição') tagClass = 'tag-sub';
 
+    // Extrair dados estruturados do resumo e ato
+    const nome = extrairNome(item.resumo, item.ato);
+    const cargo = extrairCargo(item.resumo, item.ato);
+    const sigla = item.orgao || '';
+    const fce = extrairFCE(item.resumo);
+    const tipoAto = item.tipo || 'Outros';
+    const diretoria = extrairDiretoria(item.resumo);
+    const portaria = item.ato || '';
+    const dtPortaria = item.data || '';
+    const pubDOU = formatarDataPub(item.data);
+    const vigencia = extrairVigencia(item.resumo);
+
     return `
       <tr>
-        <td><span class="badge-orgao">${item.orgao}</span></td>
-        <td><b>${item.data}</b></td>
-        <td><span class="tag ${tagClass}">${item.tipo}</span></td>
-        <td><b>${item.ato}</b></td>
-        <td>${item.resumo}</td>
-        <td><a class="btn-link" href="${item.link}" target="_blank">Ver no DOU</a></td>
+        <td>${nome}</td>
+        <td>${cargo}</td>
+        <td><span class="badge-orgao">${sigla}</span></td>
+        <td>${fce}</td>
+        <td><span class="tag ${tagClass}">${tipoAto}</span></td>
+        <td>${diretoria}</td>
+        <td><b>${portaria}</b></td>
+        <td>${dtPortaria}</td>
+        <td>${pubDOU}</td>
+        <td>${vigencia}</td>
+        <td><a class="btn-link" href="${item.link}" target="_blank">🔗</a></td>
       </tr>
     `;
   }).join('');
+}
+
+// Funções auxiliares para extrair dados estruturados
+function extrairNome(resumo, ato) {
+  // Tenta extrair nome do resumo (padrão: "Nomeia servidor X" ou "Exonera servidor Y")
+  const matchNom = resumo.match(/(?:Nomeia|Exonera|Designa|Dispensa|Nomeado|Exonerado|Designado)\s+(?:servidor\s+)?([A-Z][a-zA-ZÀ-ÿ\s\.]+?)(?:\s*(?:para|do|da|em|cargo|função|$))/i);
+  if (matchNom && matchNom[1]) {
+    return matchNom[1].trim().substring(0, 40);
+  }
+  // Fallback: usar primeiro nome do resumo
+  const palavras = resumo.split(/\s+/);
+  for (let i = 0; i < palavras.length; i++) {
+    if (palavras[i].length > 3 && /^[A-Z][a-z]/.test(palavras[i]) && !['Nomeia', 'Exonera', 'Designa', 'Servidor', 'Cargo', 'Funcao', 'Para', 'Do', 'Da'].includes(palavras[i])) {
+      return palavras[i].replace(/[.,]/g, '').substring(0, 40);
+    }
+  }
+  return '-';
+}
+
+function extrairCargo(resumo, ato) {
+  // Tenta extrair cargo/função
+  const matchCargo = resumo.match(/(?:cargo|função|cargo em comissão|função comissionada)\s+(?:de\s+)?([^.]+?)(?:\s*(?:na|no|processo|$))/i);
+  if (matchCargo && matchCargo[1]) {
+    return matchCargo[1].trim().substring(0, 35);
+  }
+  return '-';
+}
+
+function extrairFCE(resumo) {
+  // Verifica se é FCE (Função Comissionada de Execução)
+  if (resumo.toLowerCase().includes('fce')) {
+    const match = resumo.match(/FCE\s*(?:nº|numero| número)?\s*(\d+)/i);
+    return match ? `FCE ${match[1]}` : 'FCE';
+  }
+  return '-';
+}
+
+function extrairDiretoria(resumo) {
+  // Tenta extrair diretoria/órgão interno
+  const matchDir = resumo.match(/(?:na|no|lotado\s+(?:na|no))\s+([A-Z][a-zA-ZÀ-ÿ\s\.]+?)(?:\.|Processo|$)/i);
+  if (matchDir && matchDir[1]) {
+    return matchDir[1].trim().substring(0, 25);
+  }
+  return '-';
+}
+
+function extrairVigencia(resumo) {
+  // Tenta extrair período de vigência
+  const matchVig = resumo.match(/(?:período|vigência|vigor|válida)\s*(?:de|até|para)?\s*([^.]+?)(?:\.|$)/i);
+  if (matchVig && matchVig[1]) {
+    return matchVig[1].trim().substring(0, 20);
+  }
+  return '-';
+}
+
+function formatarDataPub(data) {
+  if (!data) return '-';
+  // Data já vem no formato DD/MM/YYYY
+  return data;
 }
 
 inicializar();

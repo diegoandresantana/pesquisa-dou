@@ -1,13 +1,12 @@
-INFO:     Started server process [260]
+INFO:     Started server process [422]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
-INFO:     127.0.0.1:54844 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54846 - "GET /api/atos?orgao=IPEA HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54848 - "GET /api/coletar?orgao=IPEA HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54850 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54852 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57404 - "GET /api/atos?orgao=IPEA HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57406 - "GET /api/coletar?orgao=IPEA HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57408 - "GET /api/atos?orgao=IPEA HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57410 - "GET / HTTP/1.1" 200 OK
 INFO:     Shutting down
 INFO:     Waiting for application shutdown.
 INFO:     Application shutdown complete.
-INFO:     Finished server process [260]
+INFO:     Finished server process [422]
