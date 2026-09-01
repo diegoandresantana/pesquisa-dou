@@ -18,7 +18,8 @@
     
     .filtros { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 15px; }
     .filtros input, .filtros select { padding: 9px 12px; border: 1px solid #c7cad1; border-radius: 6px; font-size: 13px; }
-    .filtros input { flex: 1; min-width: 280px; }
+    .filtros input[type="text"] { flex: 1; min-width: 280px; }
+    .filtros input[type="date"] { flex: 0 0 auto; min-width: 150px; }
     
     table { width: 100%; border-collapse: collapse; font-size: 13px; }
     th { background: #1F3864; color: #fff; text-align: left; padding: 11px 10px; font-weight: 600; }
@@ -105,6 +106,8 @@
         <option value="Substituição">Substituições</option>
         <option value="Outros">Outros</option>
       </select>
+      <input type="date" id="fDataInicio" placeholder="Data Início" onchange="filtrarLocal()" title="Data de Publicação Início">
+      <input type="date" id="fDataFim" placeholder="Data Fim" onchange="filtrarLocal()" title="Data de Publicação Fim">
     </div>
 
     <table>
@@ -241,11 +244,29 @@ function alterarOrgao() {
 function filtrarLocal() {
   const busca = document.getElementById('fBusca').value.toLowerCase();
   const tipo = document.getElementById('fTipo').value;
+  const dataInicio = document.getElementById('fDataInicio').value;
+  const dataFim = document.getElementById('fDataFim').value;
 
   const filtrados = DADOS_BRUTOS.filter(item => {
+    // Filtro por texto
     const matchTexto = item.ato.toLowerCase().includes(busca) || item.resumo.toLowerCase().includes(busca) || (item.nome && item.nome.toLowerCase().includes(busca));
+    
+    // Filtro por tipo
     const matchTipo = !tipo || item.tipo === tipo;
-    return matchTexto && matchTipo;
+    
+    // Filtro por período de datas
+    let matchData = true;
+    if (dataInicio || dataFim) {
+      const itemData = item.data || '';
+      if (dataInicio && itemData < dataInicio) {
+        matchData = false;
+      }
+      if (dataFim && itemData > dataFim) {
+        matchData = false;
+      }
+    }
+    
+    return matchTexto && matchTipo && matchData;
   });
 
   atualizarResumo(filtrados);
