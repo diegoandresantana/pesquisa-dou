@@ -1,19 +1,23 @@
 # Portal de Atos do Diário Oficial da União (DOU)
 
-Aplicação web completa para consulta e monitoramento de atos oficiais publicados no Diário Oficial da União - Seção 2 (Atos de Pessoal).
+Aplicação web completa para consulta e monitoramento de atos oficiais publicados no Diário Oficial da União - Seção 2 (Atos de Pessoal), com integração real à API do **Ro-dou** (gestão.gov.br).
 
 ## 🚀 Funcionalidades
 
+- **Dados Reais do DOU**: Integração com a API pública do Ro-dou para buscar atos oficiais automaticamente
 - **Consulta por Órgão**: Selecione entre múltiplos órgãos da administração pública federal
-- **Filtros Avançados**: Busque por nome, cargo, tipo de ato ou termo livre
-- **Visualização Organizada**: Interface limpa com badges coloridos por tipo de ato
+- **Filtros Avançados**: Busque por nome, cargo, tipo de ato, período ou termo livre
+- **Resumo Dinâmico**: Painel estatístico no topo com totais calculados em tempo real (Movimentações, FCE, Nomeações, Exonerações, etc.)
+- **Tabela Estruturada**: Visualização detalhada com colunas: Nome, Cargo, Sigla, FCE, Tipo de Ato, Diretoria, Portaria, Data, Vigência e Link
 - **API REST**: Backend completo com FastAPI para integração
-- **Dados em Tempo Real**: Coleta e atualização automática de dados do DOU
+- **Links Funcionais**: Acesso direto à íntegra dos atos no site oficial do DOU
+- **Deploy Fácil**: Pronto para rodar localmente, em Docker ou na nuvem (Render, Railway, etc.)
 
 ## 📋 Requisitos
 
 - Python 3.8+
 - pip (gerenciador de pacotes Python)
+- Conexão com internet (para buscar dados reais do DOU)
 
 ## 🔧 Instalação e Uso Local
 
@@ -35,7 +39,7 @@ bash rodarotina.sh
 pip install -r requirements.txt
 
 # 2. Inicie o servidor
-python server.py
+python -m uvicorn server:app --host 0.0.0.0 --port 8000 --reload
 ```
 
 ### Opção 3: Docker
@@ -101,14 +105,16 @@ Após iniciar o servidor, acesse:
 
 ```
 /workspace
-├── server.py              # Backend FastAPI (servidor principal)
-├── index.html             # Frontend (interface web)
+├── server.py              # Backend FastAPI (servidor principal + schemas)
+├── index.html             # Frontend (interface web com resumo e tabela)
+├── dou_search.py          # Motor de coleta (integração API Ro-dou)
+├── parser_dou.py          # Parser de dados brutos para estrutura padronizada
 ├── requirements.txt       # Dependências Python
 ├── rodarotina.sh          # Script de inicialização
 ├── Dockerfile             # Docker para desenvolvimento
 ├── Dockerfile.prod        # Docker para produção
 ├── README.md              # Este arquivo
-└── dados_dou_orgaos.json  # Banco de dados JSON (gerado automaticamente)
+└── dados_dou_orgaos.json  # Banco de dados JSON (cache local)
 ```
 
 ## 🔌 Endpoints da API
@@ -117,8 +123,9 @@ Após iniciar o servidor, acesse:
 |----------|--------|-----------|
 | `/` | GET | Serve a interface web |
 | `/api/organizacoes` | GET | Lista todos os órgãos disponíveis |
-| `/api/atos` | GET | Lista atos com filtros (orgao, q, tipo) |
-| `/api/coletar` | GET | Força coleta de novos dados |
+| `/api/atos` | GET | Lista atos (prioriza cache real, fallback para simulado) |
+| `/api/buscar_real` | GET | **Busca dados reais no DOU via API Ro-dou** |
+| `/api/coletar` | GET | Força coleta/atualização de dados |
 | `/health` | GET | Verifica saúde da API |
 | `/docs` | GET | Documentação Swagger UI |
 
@@ -128,8 +135,11 @@ Após iniciar o servidor, acesse:
 # Listar todos os órgãos
 curl http://localhost:8000/api/organizacoes
 
-# Listar atos do IPEA
+# Listar atos (do cache ou simulados)
 curl "http://localhost:8000/api/atos?orgao=IPEA"
+
+# **Buscar dados REAIS no DOU (integração Ro-dou)**
+curl "http://localhost:8000/api/buscar_real?orgao=IPEA&dias=7"
 
 # Buscar atos com termo específico
 curl "http://localhost:8000/api/atos?orgao=TODOS&q=nomeacao"
@@ -154,13 +164,29 @@ ORGANIZACOES = [
 ]
 ```
 
-### Implementar Scraping Real
+### Configurar Busca no Ro-dou
 
-Atualmente a aplicação usa dados simulados. Para implementar scraping real do DOU:
+O sistema já vem configurado para usar a API pública do Ro-dou. Para personalizar parâmetros de busca:
 
-1. Modifique a função `coletar_atos()` em `server.py`
-2. Use bibliotecas como `requests` + `BeautifulSoup` ou `Selenium`
-3. Parseie o HTML do site [in.gov.br](https://www.in.gov.br)
+1. Edite `dou_search.py` para ajustar termos padrão ou filtros
+2. Modifique `parser_dou.py` para refinar a extração de campos específicos (nome, cargo, FCE, etc.)
+
+## 📊 Como Funciona o Fluxo de Dados
+
+1. **Usuário clica em "🔍 Buscar no DOU Real"** no frontend
+2. **Frontend chama** `/api/buscar_real` no backend
+3. **Backend (`dou_search.py`)** consulta a API do Ro-dou com os filtros selecionados
+4. **Parser (`parser_dou.py`)** processa os dados brutos, extraindo:
+   - Nome do servidor
+   - Cargo/Função
+   - Código FCE/DAS
+   - Tipo de ato (Nomeação, Exoneração, Substituição, etc.)
+   - Vigência e outras informações estruturadas
+5. **Cache Global** armazena os dados processados
+6. **Frontend atualiza**:
+   - Painel de Resumo (cálculos automáticos)
+   - Tabela Estruturada (linhas preenchidas)
+   - Links funcionais para o DOU oficial
 
 ## 📝 Licença
 
@@ -177,3 +203,5 @@ Contribuições são bem-vindas! Sinta-se à vontade para:
 ---
 
 **Desenvolvido para facilitar o acesso e transparência dos atos oficiais da Administração Pública Federal.**
+
+*Integração com dados reais fornecida pela API do [Ro-dou](https://github.com/gestaogovbr/Ro-dou).*
