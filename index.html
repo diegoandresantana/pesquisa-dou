@@ -18,7 +18,8 @@
     
     .filtros { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 15px; }
     .filtros input, .filtros select { padding: 9px 12px; border: 1px solid #c7cad1; border-radius: 6px; font-size: 13px; }
-    .filtros input { flex: 1; min-width: 280px; }
+    .filtros input[type="text"] { flex: 1; min-width: 280px; }
+    .filtros input[type="date"] { flex: 0 0 auto; min-width: 150px; }
     
     table { width: 100%; border-collapse: collapse; font-size: 13px; }
     th { background: #1F3864; color: #fff; text-align: left; padding: 11px 10px; font-weight: 600; }
@@ -86,9 +87,14 @@
       <div class="stats">
         <div class="stat-box"><b id="totalAtos">0</b><span>Atos Exibidos</span></div>
       </div>
-      <button id="btnAtualizar" onclick="atualizarDados()" style="padding: 9px 18px; background: #28a745; color: #fff; border: none; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px;">
-        <span>🔄</span> Atualizar Dados
-      </button>
+      <div style="display: flex; gap: 10px;">
+        <button id="btnBuscarReal" onclick="buscarDadosReais()" style="padding: 9px 18px; background: #667eea; color: #fff; border: none; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+          <span>🔍</span> Buscar no DOU Real
+        </button>
+        <button id="btnAtualizar" onclick="atualizarDados()" style="padding: 9px 18px; background: #28a745; color: #fff; border: none; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+          <span>🔄</span> Atualizar Dados
+        </button>
+      </div>
     </div>
 
     <div class="filtros">
@@ -100,6 +106,8 @@
         <option value="Substituição">Substituições</option>
         <option value="Outros">Outros</option>
       </select>
+      <input type="date" id="fDataInicio" placeholder="Data Início" onchange="filtrarLocal()" title="Data de Publicação Início">
+      <input type="date" id="fDataFim" placeholder="Data Fim" onchange="filtrarLocal()" title="Data de Publicação Fim">
     </div>
 
     <table>
@@ -197,6 +205,36 @@ async function atualizarDados() {
   }
 }
 
+async function buscarDadosReais() {
+  const btn = document.getElementById('btnBuscarReal');
+  const orgao = document.getElementById('selOrgao').value;
+  
+  btn.disabled = true;
+  btn.innerHTML = '<span>⏳</span> Buscando no DOU...';
+  
+  try {
+    const res = await fetch(`/api/buscar_real?orgao=${orgao}&dias=7`);
+    const resultado = await res.json();
+    
+    if (resultado.status === 'sucesso' && resultado.dados) {
+      // Atualiza cache local com dados reais
+      DADOS_BRUTOS = resultado.dados;
+      filtrarLocal();
+      alert(`✅ Busca real concluída!\\n${resultado.total_atos} atos encontrados no DOU para ${orgao}.`);
+    } else if (resultado.status === 'aviso') {
+      alert(`⚠️ ${resultado.mensagem}`);
+    } else {
+      alert(`❌ Erro: ${resultado.mensagem || 'Falha na busca'}`);
+    }
+  } catch (err) {
+    console.error("Erro na busca real:", err);
+    alert('❌ Erro de conexão ao buscar dados reais. Verifique se o servidor está rodando.');
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = '<span>🔍</span> Buscar no DOU Real';
+  }
+}
+
 function alterarOrgao() {
   document.getElementById('fBusca').value = '';
   document.getElementById('fTipo').value = '';
@@ -206,11 +244,29 @@ function alterarOrgao() {
 function filtrarLocal() {
   const busca = document.getElementById('fBusca').value.toLowerCase();
   const tipo = document.getElementById('fTipo').value;
+  const dataInicio = document.getElementById('fDataInicio').value;
+  const dataFim = document.getElementById('fDataFim').value;
 
   const filtrados = DADOS_BRUTOS.filter(item => {
+    // Filtro por texto
     const matchTexto = item.ato.toLowerCase().includes(busca) || item.resumo.toLowerCase().includes(busca) || (item.nome && item.nome.toLowerCase().includes(busca));
+    
+    // Filtro por tipo
     const matchTipo = !tipo || item.tipo === tipo;
-    return matchTexto && matchTipo;
+    
+    // Filtro por período de datas
+    let matchData = true;
+    if (dataInicio || dataFim) {
+      const itemData = item.data || '';
+      if (dataInicio && itemData < dataInicio) {
+        matchData = false;
+      }
+      if (dataFim && itemData > dataFim) {
+        matchData = false;
+      }
+    }
+    
+    return matchTexto && matchTipo && matchData;
   });
 
   atualizarResumo(filtrados);

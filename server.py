@@ -17,8 +17,11 @@ from pydantic import BaseModel
 # Importa o módulo de busca no DOU
 from dou_search import buscar_atos_dou, buscar_portarias_nomeacao, buscar_exoneracoes
 
-# Importa o módulo de busca no DOU (Ro-dou API)
-import dou_search
+# Importa o módulo parser para converter dados brutos em estruturados
+from parser_dou import parsear_atos_ro_dou
+
+# Cache global para armazenar atos coletados (estado da aplicação)
+atos_cache: List[Dict[str, Any]] = []
 
 app = FastAPI(
     title="Portal de Atos DOU",
@@ -283,24 +286,35 @@ async def listar_atos(
     """
     Lista atos do DOU filtrados por órgão, termo de busca e tipo.
     
+    Prioriza dados reais em cache (se houver). Se não, usa dados simulados.
+    
     - **orgao**: Sigla do órgão (IPEA, MEC, etc.) ou 'TODOS' para todos os órgãos
     - **q**: Termo de busca para filtrar no texto dos atos
-    - **tipo**: Tipo de ato (Nomeação, Exoneração, Substitição, etc.)
+    - **tipo**: Tipo de ato (Nomeação, Exoneração, Substituição, etc.)
     """
-    orgao_upper = orgao.upper()
-    dados = carregar_ou_coletar_dados(orgao_upper)
+    global atos_cache
+    
+    # Se houver dados reais em cache, usa-os primeiro
+    if atos_cache:
+        dados = atos_cache
+        print(f"📌 Usando {len(dados)} atos do cache (dados reais)")
+    else:
+        # Fallback para dados simulados se cache estiver vazio
+        orgao_upper = orgao.upper()
+        dados = carregar_ou_coletar_dados(orgao_upper)
+        print(f"📌 Usando {len(dados)} atos simulados (cache vazio)")
     
     # Filtrar por termo de busca
     if q:
         q_lower = q.lower()
         dados = [
             d for d in dados 
-            if q_lower in d["ato"].lower() or q_lower in d["resumo"].lower()
+            if q_lower in d.get("ato", "").lower() or q_lower in d.get("resumo", "").lower()
         ]
     
     # Filtrar por tipo
     if tipo:
-        dados = [d for d in dados if d["tipo"].lower() == tipo.lower()]
+        dados = [d for d in dados if d.get("tipo", "").lower() == tipo.lower()]
     
     return dados
 
@@ -310,9 +324,11 @@ async def forcar_coleta(
     orgao: str = Query("TODOS", description="Órgão para coletar ou TODOS")
 ):
     """
-    Força a coleta de novos dados do DOU e salva no arquivo JSON.
+    Força a coleta de novos dados do DOU (simulados) e salva no arquivo JSON.
     Útil para atualizar a base de dados manualmente.
     """
+    global atos_cache
+    
     orgao_upper = orgao.upper()
     
     if orgao_upper == "TODOS":
@@ -325,6 +341,11 @@ async def forcar_coleta(
             json.dump(dados_completos, f, ensure_ascii=False, indent=2)
         
         total = sum(len(v) for v in dados_completos.values())
+        # Atualiza cache com todos os dados
+        atos_cache = []
+        for lista in dados_completos.values():
+            atos_cache.extend(lista)
+        
         return {
             "status": "sucesso",
             "mensagem": f"Dados coletados e salvos para {len(dados_completos)} organizações",
@@ -346,10 +367,72 @@ async def forcar_coleta(
         with open(ARQUIVO_DADOS, "w", encoding="utf-8") as f:
             json.dump(base_completa, f, ensure_ascii=False, indent=2)
         
+        # Atualiza cache
+        atos_cache = dados
+        
         return {
             "status": "sucesso",
             "mensagem": f"Dados coletados e salvos para {orgao_upper}",
             "total_atos": len(dados)
+        }
+
+
+@app.get("/api/buscar_real")
+async def buscar_dou_real(
+    orgao: str = Query("IPEA", description="Sigla do órgão para busca no DOU real"),
+    termos: str = Query("", description="Termos adicionais para busca"),
+    dias: int = Query(7, description="Dias para retroceder na busca")
+):
+    """
+    Busca atos REAIS no Diário Oficial da União usando a API do Ro-dou.
+    
+    - **orgao**: Sigla do órgão (IPEA, MEC, ANPD, etc.)
+    - **termos**: Termos adicionais para refinar a busca (opcional)
+    - **dias**: Quantos dias retroceder na busca (padrão: 7)
+    
+    Retorna dados estruturados extraídos dos textos oficiais.
+    """
+    global atos_cache
+    
+    try:
+        print(f"🔍 Iniciando busca real no DOU para órgão: {orgao}")
+        
+        # Chama o motor de coleta real
+        resultados_brutos = buscar_atos_dou(orgao=orgao, termos=termos, dias=dias)
+        
+        if not resultados_brutos:
+            return {
+                "status": "aviso",
+                "mensagem": f"Nenhum ato encontrado para {orgao} nos últimos {dias} dias.",
+                "total_atos": 0,
+                "dados": []
+            }
+        
+        print(f"📄 Encontrados {len(resultados_brutos)} atos brutos. Processando...")
+        
+        # Usa o parser para converter dados brutos em estruturados
+        dados_estruturados = parsear_atos_ro_dou(resultados_brutos)
+        
+        # Atualiza o cache global com dados reais
+        atos_cache = dados_estruturados
+        
+        print(f"✅ Sucesso! {len(dados_estruturados)} atos processados e cache atualizado.")
+        
+        return {
+            "status": "sucesso",
+            "mensagem": f"Busca real concluída para {orgao}",
+            "total_atos": len(dados_estruturados),
+            "dados": dados_estruturados
+        }
+        
+    except Exception as e:
+        print(f"❌ Erro na busca real: {str(e)}")
+        return {
+            "status": "erro",
+            "erro": "Erro ao buscar dados reais",
+            "mensagem": str(e),
+            "total_atos": 0,
+            "dados": []
         }
 
 
