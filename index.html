@@ -86,9 +86,14 @@
       <div class="stats">
         <div class="stat-box"><b id="totalAtos">0</b><span>Atos Exibidos</span></div>
       </div>
-      <button id="btnAtualizar" onclick="atualizarDados()" style="padding: 9px 18px; background: #28a745; color: #fff; border: none; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px;">
-        <span>🔄</span> Atualizar Dados
-      </button>
+      <div style="display: flex; gap: 10px;">
+        <button id="btnBuscarReal" onclick="buscarDadosReais()" style="padding: 9px 18px; background: #667eea; color: #fff; border: none; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+          <span>🔍</span> Buscar no DOU Real
+        </button>
+        <button id="btnAtualizar" onclick="atualizarDados()" style="padding: 9px 18px; background: #28a745; color: #fff; border: none; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+          <span>🔄</span> Atualizar Dados
+        </button>
+      </div>
     </div>
 
     <div class="filtros">
@@ -194,6 +199,36 @@ async function atualizarDados() {
   } finally {
     btn.disabled = false;
     btn.innerHTML = '<span>🔄</span> Atualizar Dados';
+  }
+}
+
+async function buscarDadosReais() {
+  const btn = document.getElementById('btnBuscarReal');
+  const orgao = document.getElementById('selOrgao').value;
+  
+  btn.disabled = true;
+  btn.innerHTML = '<span>⏳</span> Buscando no DOU...';
+  
+  try {
+    const res = await fetch(`/api/buscar_real?orgao=${orgao}&dias=7`);
+    const resultado = await res.json();
+    
+    if (resultado.status === 'sucesso' && resultado.dados) {
+      // Atualiza cache local com dados reais
+      DADOS_BRUTOS = resultado.dados;
+      filtrarLocal();
+      alert(`✅ Busca real concluída!\\n${resultado.total_atos} atos encontrados no DOU para ${orgao}.`);
+    } else if (resultado.status === 'aviso') {
+      alert(`⚠️ ${resultado.mensagem}`);
+    } else {
+      alert(`❌ Erro: ${resultado.mensagem || 'Falha na busca'}`);
+    }
+  } catch (err) {
+    console.error("Erro na busca real:", err);
+    alert('❌ Erro de conexão ao buscar dados reais. Verifique se o servidor está rodando.');
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = '<span>🔍</span> Buscar no DOU Real';
   }
 }
 
